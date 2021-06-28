@@ -9,7 +9,7 @@ pipeline{
   
   parameters{
     string (name: 'User', defaultValue: 'Nabin', description: 'This is for Dev env')
-    choice (name: 'Version', choices: [1.0.0, 1.0.1, 1.0.3], description: 'Version choices')
+    choice (name: 'Version', choices: ['1.0.0', '1.0.1', '1.0.3'], description: 'Version choices')
   }
   
   
