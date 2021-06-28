@@ -1,9 +1,18 @@
 pipeline{
   agent any
+  
+  enviroment{
+    F_NAME= "Ram"
+    L_NAME= "Bahadur"
+    VERSION= "1.0.3"
+  }
+  
   stages{
     stage ("Dev"){
       steps{
         echo "This is dev stage"
+        echo "Owner of this stage is :${F_NAME} ${L_NAME}"
+        echo "Version: ${VERSION}"
       }
     }
     
