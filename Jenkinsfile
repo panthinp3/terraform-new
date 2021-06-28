@@ -11,7 +11,7 @@ pipeline{
     stage ("Dev"){
       when{
         expression{
-          ${NEW_VERSION}= "1.0.0"
+          ${NEW_VERSION}== "1.0.0"
         }
       }
       steps{
