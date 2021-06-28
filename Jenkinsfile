@@ -29,8 +29,8 @@ pipeline{
     
     stage ("Test"){
       steps{
-        Params.User
-        Params.Version
+        ${params.User}
+        ${params.Version}
         echo 'This is test stage'
       }
     }
