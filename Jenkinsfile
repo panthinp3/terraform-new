@@ -2,8 +2,8 @@ pipeline{
   agent any
   
   environment{
-    F_NAME= "Ram"
-    L_NAME= "Bahadur"
+    F_NAME= 'Ram'
+    L_NAME= 'Bahadur'
     NEW_VERSION= '1.0.3'
   }
   
@@ -11,11 +11,11 @@ pipeline{
     stage ("Dev"){
       when{
         expression{
-          ${NEW_VERSION}== '1.0.0'
+          NEW_VERSION == '1.0.0'
         }
       }
       steps{
-        echo "This is dev stage"
+        echo 'This is dev stage'
         echo "Owner of this stage is :${F_NAME} ${L_NAME}"
         echo "Version: ${NEW_VERSION}"
       }
@@ -23,13 +23,13 @@ pipeline{
     
     stage ("Test"){
       steps{
-        echo "This is test stage"
+        echo 'This is test stage'
       }
     }
     
     stage ("Prod"){
       steps{
-        echo "This is prod stage"
+        echo 'This is prod stage'
       }
     }
     
