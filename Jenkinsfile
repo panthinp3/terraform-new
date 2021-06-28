@@ -17,7 +17,7 @@ pipeline{
     stage ("Dev"){
       when{
         expression{
-          NEW_VERSION == '1.0.0'
+          NEW_VERSION == params.Version
         }
       }
       steps{
@@ -29,7 +29,7 @@ pipeline{
     
     stage ("Test"){
       steps{
-       echo "User: ${params.User}"
+        echo "User: ${params.User}"
         echo "Version: ${params.Version}"
         echo 'This is test stage'
       }
