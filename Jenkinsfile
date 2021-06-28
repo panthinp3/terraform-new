@@ -7,6 +7,12 @@ pipeline{
     NEW_VERSION= '1.0.3'
   }
   
+  parameters{
+    string (name: 'User', defaultValue: 'Nabin', description: 'This is for Dev env')
+    choice (name: 'Version', choices: [1.0.0, 1.0.1, 1.0.3], description: 'Version choices')
+  }
+  
+  
   stages{
     stage ("Dev"){
       when{
@@ -23,6 +29,8 @@ pipeline{
     
     stage ("Test"){
       steps{
+        params.User
+        params.Version
         echo 'This is test stage'
       }
     }
