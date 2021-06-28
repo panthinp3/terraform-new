@@ -1,7 +1,7 @@
 pipeline{
   agent any
   
-  enviroment{
+  environment{
     F_NAME= "Ram"
     L_NAME= "Bahadur"
     VERSION= "1.0.3"
