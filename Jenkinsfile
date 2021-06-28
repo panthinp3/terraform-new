@@ -4,15 +4,20 @@ pipeline{
   environment{
     F_NAME= "Ram"
     L_NAME= "Bahadur"
-    VERSION= "1.0.3"
+    NEW_VERSION= "1.0.3"
   }
   
   stages{
     stage ("Dev"){
+      when{
+        expression{
+          ${NEW_VERSION}= "1.0.0"
+        }
+      }
       steps{
         echo "This is dev stage"
         echo "Owner of this stage is :${F_NAME} ${L_NAME}"
-        echo "Version: ${VERSION}"
+        echo "Version: ${NEW_VERSION}"
       }
     }
     
