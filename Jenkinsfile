@@ -4,14 +4,14 @@ pipeline{
   environment{
     F_NAME= "Ram"
     L_NAME= "Bahadur"
-    NEW_VERSION= "1.0.3"
+    NEW_VERSION= '1.0.3'
   }
   
   stages{
     stage ("Dev"){
       when{
         expression{
-          ${NEW_VERSION}== "1.0.0"
+          ${NEW_VERSION}== '1.0.0'
         }
       }
       steps{
